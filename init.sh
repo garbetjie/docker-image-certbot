@@ -39,5 +39,5 @@ exec certbot "$COMMAND" -n --agree-tos \
        ${DRY_RUN} \
        --cert-name "${CERT_NAME}" \
        --dns-cloudflare --dns-cloudflare-credentials /mnt/cloudflare.ini \
-       --deploy-hook /mnt/deploy-hook.sh \
-       --post-hook /mnt/post-hook.sh
+       --deploy-hook /opt/deploy-hook \
+       --post-hook /opt/post-hook
