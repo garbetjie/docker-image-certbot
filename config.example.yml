@@ -1,0 +1,16 @@
+---
+certificates:
+  - name: certificate-name        # The name of the certificate (--cert-name)
+    email: ""                     # The domain notification email address (-m)
+    domains:                      # Domains to request certificates for (-d)
+      - garbers.co.za
+      - www.garbers.co.za
+    google:
+      enabled: true               # Whether or not this deployment configuration is enabled.
+      project: ""                 # The name of the project to which this deployment will take place. Optional.
+      ssl_cert_prefix: ""         # The prefix of the GCP SSL certificate. Will be combined with ssl_cert_suffix and run through datetime.strftime(). Optional.
+      ssl_cert_suffix: "%Y%m"     # The suffix of the GCP SSL certificate. Will be combined with ssl_cert_prefix and run through datetime.strftime(). Optional.
+      target_proxy: ""            # The name of the target HTTPS proxy to update the list of certificates for.
+      bucket_urn: ""              # The bucket name to which the updated certificates are uploaded (as a tar file).
+      encrypt_pass: ""            # The password with which the updated certificates are encrypted before uploading to the bucket.
+      service_account_file: ""    # The path to a service account JSON file that will be used to authenticate.
