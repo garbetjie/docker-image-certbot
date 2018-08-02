@@ -11,8 +11,8 @@ class _Data:
     cert_path = None
     tar_path = None
 
-    gcloud_path = '/tmp/google-cloud-sdk/bin/gcloud'
-    gsutil_path = '/tmp/google-cloud-sdk/bin/gsutil'
+    gcloud_path = '/opt/google/bin/gcloud'
+    gsutil_path = '/opt/google/bin/gsutil'
 
 
 def init(cert_path):

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys
+import os.path as path
 import yaml
 import traceback
 import argparse
@@ -51,6 +51,13 @@ elif 'email' in config:
 else:
     print "No email defined in any configuration. An email address is required."
     exit(1)
+
+
+# Before we request the certificates, ensure that we have the cloud provider SDKs available.
+# If there is no /opt/{provider} directory, then we can make the assumption that we're using the compressed version,
+# and so need to uncompress it.
+if not path.isdir('/opt/google'):
+    run(['/bin/tar', '-xzf', '/tmp/google-cloud-sdk.tar.gz'])
 
 
 # Build the initial command.
