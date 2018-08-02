@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
+set -ex
 
+docker push "${IMAGE_NAME}"
 docker push "${IMAGE_NAME}-compressed"
