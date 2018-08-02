@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 
-if [ echo "$IMAGE_NAME" | grep -q compress ]]; then
-    docker build --build-arg GCLOUD_COMPRESSED=true $IMAGE_NAME
-else
-    docker build --build-arg GCLOUD_COMPRESSED=false $IMAGE_NAME
-fi
+docker build --build-arg COMPRESSED=false "$IMAGE_NAME"
+docker build --build-arg COMPRESSED=true "${IMAGE_NAME}-compressed"
