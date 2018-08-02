@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -ex
-env
 
-docker build --build-arg COMPRESSED=false "$IMAGE_NAME"
-docker build --build-arg COMPRESSED=true "${IMAGE_NAME}-compressed"
+docker build --build-arg COMPRESSED=false -t "$IMAGE_NAME" .
+docker build --build-arg COMPRESSED=true -t "${IMAGE_NAME}-compressed" .
